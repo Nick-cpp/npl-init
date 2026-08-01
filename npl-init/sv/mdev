@@ -1,0 +1,10 @@
+#!/bin/sh
+
+start () {
+    mdev -s
+    mdev -d &
+}
+
+stop () {
+    killall mdev
+}

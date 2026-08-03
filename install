@@ -1,3 +1,5 @@
 cp init /
 
+cp run /usr/bin/
+
 cp -rf npl-init /etc/

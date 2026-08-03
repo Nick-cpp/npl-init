@@ -1,13 +1,6 @@
 #!/bin/sh
 
 start() {
-	for tty_maj_min in "tty1 4 1" "ttyS0 4 64"; do
-	    set -- $tty_maj_min
-	    if [ ! -c /dev/$1 ]; then
-	        mknod /dev/$1 c $2 $3
-	    fi
-	done
-	
 	while true; do
 	    openvt -c 1 -f -w -- cttyhack login
 	done &

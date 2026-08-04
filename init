@@ -4,6 +4,8 @@ dmesg -n 1
 
 . /etc/npl-init/lib
 
+printf "Starting up \033[1;32mNoPersonalLife Linux\033[0m\n"
+
 log "Mounting pseudo file systems"
 
 mnt nosuid,noexec,nodev    proc     proc /proc

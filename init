@@ -56,7 +56,7 @@ while IFS= read -r line; do
         ''|\#*) continue ;;
     esac
 
-    run -s "$line"
+    npli -s "$line"
     log "Starting $line"
 done < /etc/npl-init/sv/DEFAULT
 

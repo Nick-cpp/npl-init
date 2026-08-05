@@ -1,5 +1,5 @@
-cp init /
+cp init /sbin/
 
-cp run /usr/bin/
+cp npli /usr/bin/
 
 cp -rf npl-init /etc/

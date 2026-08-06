@@ -4,6 +4,8 @@ dmesg -n 1
 
 . /etc/npl-init/lib
 
+trap 'shutdown' TERM INT USR1 USR2
+
 printf "Starting up \033[1;32mNoPersonalLife Linux\033[0m\n"
 
 log "Mounting pseudo file systems"
@@ -34,6 +36,8 @@ log "Mounting all local filesystems"
 mount -a
 swapon -a
 
+rm -f /halt
+
 log "Setting up loopback interface"
 ip link set lo up
 
@@ -47,6 +51,8 @@ fi
 upt=$(awk '{print $1}' /proc/uptime)
 log "Booted in $upt seconds"
 
+acpid &
+
 log "Running default services"
 while IFS= read -r line; do
     line="${line#"${line%%[![:space:]]*}"}"
@@ -56,10 +62,10 @@ while IFS= read -r line; do
         ''|\#*) continue ;;
     esac
 
-    npli -s "$line"
     log "Starting $line"
+    npli -s "$line"
 done < /etc/npl-init/sv/DEFAULT
 
 while true; do
-    wait
+    sleep 10000 & wait $!
 done

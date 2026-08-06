@@ -1,5 +1,10 @@
 # ALWAYS KEEP THE EMPTY STRING AT THE END
 mdev
 dhcpcd
-tty
+tty1
+tty2
+tty3
+tty4
+tty5
+tty6
 

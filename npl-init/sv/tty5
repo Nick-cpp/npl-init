@@ -1,0 +1,12 @@
+#!/bin/sh
+
+start() {
+    while true; do
+        openvt -w -f -c 5 -- sh -c 'exec agetty -J tty5' || sleep 1
+    done &
+}
+
+stop() {
+    pkill -f 'openvt.*-c 5' 2>/dev/null
+    pkill -f 'agetty.*tty5' 2>/dev/null
+}

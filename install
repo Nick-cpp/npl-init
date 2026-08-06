@@ -3,3 +3,8 @@ cp init /sbin/
 cp npli /usr/bin/
 
 cp -rf npl-init /etc/
+
+ln -sf /etc/npl-init/npl-halt /sbin/reboot
+ln -sf /etc/npl-init/npl-halt /sbin/poweroff
+ln -sf /etc/npl-init/npl-halt /sbin/halt
+ln -sf /etc/npl-init/npl-halt /sbin/shutdown

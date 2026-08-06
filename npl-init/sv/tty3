@@ -1,0 +1,12 @@
+#!/bin/sh
+
+start() {
+    while true; do
+        openvt -w -f -c 3 -- sh -c 'exec agetty -J tty3' || sleep 1
+    done &
+}
+
+stop() {
+    pkill -f 'openvt.*-c 3' 2>/dev/null
+    pkill -f 'agetty.*tty3' 2>/dev/null
+}

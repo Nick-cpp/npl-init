@@ -2,7 +2,7 @@
 
 log() {
     msg="$1"; shift
-    printf " [\033[0;35m*\033[0;0m] " # decor
+    printf " (\033[0;35m*\033[0;0m) " # decor
     printf "%s\n" "$msg"
 }
 
@@ -25,4 +25,47 @@ mnt() {
 die() {
     log "$1" >&2
     exit "${2:-1}"
+}
+
+
+shutdown() {
+
+    kill -15 -1 2>/dev/null
+    sleep 1
+    kill -9 -1 2>/dev/null
+
+    log "Disabling swap"
+    swapoff -a
+
+    log "Cleaning /tmp"
+    find /tmp -mindepth 1 -delete
+
+    ACTION="$(cat /halt 2>/dev/null)"
+
+    rm -f /halt
+
+    log "Flushing file buffers to disk"
+    sync
+
+    log "Unmounting filesystems"
+    umount -rat nosysfs,noproc,nodevtmpfs,tmpfs
+
+    log "Remounting rootfs as ro"
+    mount -o ro,remount /
+
+    sync
+
+    echo 1 > /proc/sys/kernel/sysrq
+    case "$ACTION" in
+        poweroff|shutdown|halt)
+            log "Telling kernel to poweroff"
+            echo o > /proc/sysrq-trigger
+            ;;
+        reboot|*)
+            log "Telling kernel to reboot"
+            echo b > /proc/sysrq-trigger
+            ;;
+    esac
+
+    sleep 10
 }

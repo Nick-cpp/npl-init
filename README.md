@@ -37,7 +37,7 @@ To install directly into the running root system (`/`):
 
 ### Installation via `DESTDIR` (Chroot / Staging Target)
 
-If you are bootstrapping a new system, installing inside a `chroot`, or deploying to a mounted filesystem (e.g., `/mnt`):
+If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g., `/mnt`):
 
 * **Standard usage:**
   ```bash

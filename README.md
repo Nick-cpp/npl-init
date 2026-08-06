@@ -39,12 +39,13 @@ To install directly into the running root system (`/`):
 
 If you are bootstrapping a new system, installing inside a `chroot`, or deploying to a mounted filesystem (e.g., `/mnt`):
 
-* **Standard environment variable usage:**
+* **Standard usage:**
   ```bash
-  DESTDIR=/path/to/target ./install
+  ./install /path/to/target
+
   ```
 * **Or**
 
   ```bash
-  ./install /path/to/target
+  DESTDIR=/path/to/target ./install
   ```

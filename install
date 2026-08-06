@@ -18,12 +18,8 @@ chmod +x "${DESTDIR}/sbin/init"
 chmod +x "${DESTDIR}/usr/bin/npli"
 chmod +x "${DESTDIR}/etc/npl-init/lib"
 chmod +x "${DESTDIR}/etc/npl-init/npl-halt"
-chmod +x "${DESTDIR}/etc/npl-init/sv/*"
 
-chmod +x "${DESTDIR}/sbin/reboot"
-chmod +x "${DESTDIR}/sbin/poweroff"
-chmod +x "${DESTDIR}/sbin/shutdown"
-chmod +x "${DESTDIR}/sbin/halt"
+chmod +x "${DESTDIR}/etc/npl-init/sv/"*
 
 chmod +x "${DESTDIR}/etc/acpi/PWRB/00000080"
 chmod +x "${DESTDIR}/etc/acpi/PWRF/00000080"

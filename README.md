@@ -11,7 +11,7 @@ While specifically designed for NoPersonalLife Linux, **npl-init** can be instal
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/Nick-cpp/npl-init](https://github.com/Nick-cpp/npl-init)
+git clone https://github.com/Nick-cpp/npl-init
 cd npl-init
 ```
 

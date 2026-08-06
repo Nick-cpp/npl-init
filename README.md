@@ -43,7 +43,7 @@ If you are bootstrapping a new system, installing inside a `chroot`, or deployin
   ```bash
   DESTDIR=/path/to/target ./install
   ```
-**Or**
+* **Or**
 
   ```bash
   ./install /path/to/target

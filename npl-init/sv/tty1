@@ -1,12 +1,12 @@
 #!/bin/sh
 
 start() {
-    while true; do
-        openvt -w -f -c 1 -- sh -c 'exec agetty -J tty1' || sleep 1
+    while :; do
+        openvt -w -f -c 1 -- sh -c 'exec getty 38400 tty1' >/dev/null 2>&1 || sleep 1
     done &
 }
 
 stop() {
-    pkill -f 'openvt.*-c 1' 2>/dev/null
-    pkill -f 'agetty.*tty1' 2>/dev/null
+    pkill -f "openvt.*-c 1" 2>/dev/null
+    pkill -f "getty.*tty1" 2>/dev/null
 }

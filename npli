@@ -33,7 +33,7 @@ case $1 in
         fi
         ;;
     --version|-v)
-        echo "NoPersonalLife-Linux init v1.0.0"
+        echo "NoPersonalLife-Linux init v1.1.0"
         ;;
     --help|-h)
         usage

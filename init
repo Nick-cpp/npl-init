@@ -52,7 +52,7 @@ fi
 upt=$(awk '{print $1}' /proc/uptime)
 log "Booted in $upt seconds"
 
-acpid &
+acpid >> /etc/npl-init/log 2>&1 &
 
 log "Running default services"
 while IFS= read -r line; do

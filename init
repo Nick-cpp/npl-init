@@ -20,10 +20,10 @@ mkdir -p /run/user /run/lock /run/log /dev/pts /dev/shm
 mnt mode=0620,gid=5,nosuid,noexec devpts devpts /dev/pts
 mnt mode=1777,nosuid,nodev        tmpfs  shm    /dev/shm
 
-ln -snf /proc/self/fd /dev/fd 2>>/etc/npl-init/log
-ln -snf /proc/self/fd/0 /dev/stdin 2>>/etc/npl-init/log
-ln -snf /proc/self/fd/1 /dev/stdout 2>>/etc/npl-init/log
-ln -snf /proc/self/fd/2 /dev/stderr 2>>/etc/npl-init/log
+ln -snf /proc/self/fd /dev/fd
+ln -snf /proc/self/fd/0 /dev/stdin
+ln -snf /proc/self/fd/1 /dev/stdout
+ln -snf /proc/self/fd/2 /dev/stderr
 
 log "Checking file systems"
 fsck -pACT

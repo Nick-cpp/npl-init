@@ -30,9 +30,9 @@ die() {
 
 shutdown() {
 
-    kill -15 -1 2>/dev/null
+    kill -15 -1 >> /etc/npl-init/log 2>&1
     sleep 1
-    kill -9 -1 2>/dev/null
+    kill -9 -1 >> /etc/npl-init/log 2>&1
 
     log "Disabling swap"
     swapoff -a
@@ -40,9 +40,10 @@ shutdown() {
     log "Cleaning /tmp"
     find /tmp -mindepth 1 -delete
 
-    ACTION="$(cat /halt 2>/dev/null)"
+    ACTION="$(cat /halt 2>>/etc/npl-init/log)"
 
     rm -f /halt
+    rm -f /etc/npl-init/log
 
     log "Flushing file buffers to disk"
     sync

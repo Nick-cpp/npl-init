@@ -13,7 +13,7 @@ Options:
     --start         | -s    Start a service
     --kill | --stop | -k    Stop a service
     --restart       | -r    Restart a service
-    --version       | -V    Display npl-init's version
+    --version       | -v    Display npl-init's version
     --help          | -h    Show this help message and exit
 .
 }
@@ -33,7 +33,7 @@ case $1 in
         fi
         ;;
     --version|-v)
-        echo "NoPersonalLife-Linux init v1.1.0"
+        echo "NoPersonalLife-Linux init v1.2.0"
         ;;
     --help|-h)
         usage

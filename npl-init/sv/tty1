@@ -2,11 +2,11 @@
 
 start() {
     while :; do
-        openvt -w -f -c 1 -- sh -c 'exec getty 38400 tty1' >/dev/null 2>&1 || sleep 1
+        openvt -w -f -c 1 -- sh -c 'exec getty 38400 tty1' >> /etc/npl-init/log 2>&1 || sleep 1
     done &
 }
 
 stop() {
-    pkill -f "openvt.*-c 1" 2>/dev/null
-    pkill -f "getty.*tty1" 2>/dev/null
+    pkill -f "openvt.*-c 1" 2>> /etc/npl-init/log
+    pkill -f "getty.*tty1" 2>> /etc/npl-init/log
 }

@@ -37,6 +37,7 @@ mount -a
 swapon -a
 
 rm -f /halt
+rm -f /etc/npl-init/log
 
 log "Setting up loopback interface"
 ip link set lo up

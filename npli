@@ -7,7 +7,7 @@ fi
 
 usage() {
     cat << .
-Usage: $0 [OPTIONS] SERVICE
+Usage: npli [OPTIONS] SERVICE
 
 Options:
     --start         | -s    Start a service

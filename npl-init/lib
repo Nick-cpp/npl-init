@@ -52,7 +52,7 @@ shutdown() {
     umount -rat nosysfs,noproc,nodevtmpfs,tmpfs
 
     log "Remounting rootfs as ro"
-    mount -vo ro,remount /
+    mount -o ro,remount /
 
     sync
 

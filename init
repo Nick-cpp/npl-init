@@ -26,10 +26,10 @@ ln -snf /proc/self/fd/1 /dev/stdout
 ln -snf /proc/self/fd/2 /dev/stderr
 
 log "Checking file systems"
-fsck -pACT
+fsck -pACT > /dev/null 2>&1 &
 
 log "Remounting rootfs as rw"
-mount -vo remount,rw /
+mount -o remount,rw /
 
 log "Mounting all local filesystems"
 

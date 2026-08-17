@@ -6,7 +6,9 @@ dmesg -n 1
 
 trap 'shutdown' TERM INT USR1 USR2
 
-printf "Starting up \033[1;32mNoPersonalLife Linux\033[0m\n"
+clear
+
+printf "Starting up \033[1;32mGentoo Linux\033[0m\n"
 
 log "Mounting pseudo file systems"
 
@@ -26,13 +28,12 @@ ln -snf /proc/self/fd/1 /dev/stdout
 ln -snf /proc/self/fd/2 /dev/stderr
 
 log "Checking file systems"
-fsck -pACT > /dev/null 2>&1 &
+fsck -pACT > /dev/null
 
 log "Remounting rootfs as rw"
 mount -o remount,rw /
 
 log "Mounting all local filesystems"
-
 mount -a
 swapon -a
 

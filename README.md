@@ -8,20 +8,12 @@ While specifically designed for NoPersonalLife Linux, **npl-init** can be instal
 
 ## Installation
 
-### 1. Clone the repository
+### Clone the repository
 
 ```bash
 git clone https://github.com/Nick-cpp/npl-init
 cd npl-init
 ```
-
-### 2. Make the installer executable
-
-```bash
-chmod +x install
-```
-
----
 
 ## Usage
 
@@ -30,7 +22,7 @@ chmod +x install
 To install directly into the running root system (`/`):
 
   ```bash
-  ./install
+  make install
   ```
 
 ---
@@ -41,11 +33,6 @@ If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g
 
 * **Standard usage:**
   ```bash
-  ./install /path/to/target
+  make DESTDIR=/path/to/target install
 
-  ```
-* **Or**
-
-  ```bash
-  DESTDIR=/path/to/target ./install
   ```

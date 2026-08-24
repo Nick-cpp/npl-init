@@ -1,7 +1,5 @@
 ETCPREFIX=/etc/npl-init
 
-all:
-
 install:
 	mkdir -p "${DESTDIR}/sbin" "${DESTDIR}/usr/bin" "${DESTDIR}/etc"
 
@@ -31,4 +29,4 @@ uninstall:
 	${DESTDIR}/sbin/init \
 	${DESTDIR}/usr/bin/npli
 
-.PHONY: all install uninstall
+.PHONY: install uninstall

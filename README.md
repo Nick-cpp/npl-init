@@ -34,7 +34,7 @@ If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g
 
 ### Uninstallation
 
-> **Warning:** Uninstalling from the running system can render it unbootable by removing critical system binaries (such as `init`). Proceed with caution.
+> **Warning:** Uninstalling from the running system can render it unbootable by removing init system. Proceed with caution.
 
 ---
 

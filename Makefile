@@ -24,8 +24,7 @@ install:
 	chmod +x "${DESTDIR}/etc/acpi/PWRF/00000080"
 uninstall:
 	rm -rf ${DESTDIR}${ETCPREFIX} \
-	${DESTDIR}/etc/acpi
-	rm -f ${DESTDIR}${ETCPREFIX}/npl-halt \
+	rm -f ${DESTDIR}/etc/acpi \
 	${DESTDIR}/sbin/init \
 	${DESTDIR}/usr/bin/npli
 

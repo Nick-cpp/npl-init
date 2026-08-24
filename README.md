@@ -37,6 +37,4 @@ If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g
 
   ```
 
-``
-**Thanks to [LINUXHUNTERREDHAT](https://github.com/LINUXHUNTERREDHAT) for providing the Makefile.**
-``
+Thanks to [LINUXHUNTERREDHAT](https://github.com/LINUXHUNTERREDHAT) for providing the Makefile.

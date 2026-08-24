@@ -31,7 +31,6 @@ To install directly into the running root system (`/`):
 
 If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g., `/mnt`):
 
-* **Standard usage:**
   ```bash
   make DESTDIR=/path/to/target install
 

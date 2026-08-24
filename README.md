@@ -15,8 +15,6 @@ git clone https://github.com/Nick-cpp/npl-init
 cd npl-init
 ```
 
-## Usage
-
 ### Direct System Installation
 
 To install directly into the running root system (`/`):
@@ -25,8 +23,6 @@ To install directly into the running root system (`/`):
   make install
   ```
 
----
-
 ### Installation via `DESTDIR` (Chroot / Staging Target)
 
 If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g., `/mnt`):
@@ -34,6 +30,28 @@ If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g
   ```bash
   make DESTDIR=/path/to/target install
 
+  ```
+
+### Uninstallation
+
+> **Warning:** Uninstalling from the running system can render it unbootable by removing critical system binaries (such as `init`). Proceed with caution.
+
+---
+
+### Direct System Uninstallation
+
+To remove directly from the running root system (`/`):
+
+  ```bash
+  make uninstall
+  ```
+
+### Uninstallation via `DESTDIR` (Chroot / Staging Target)
+
+To remove from a mounted target system or staging environment (e.g., `/mnt`):
+
+  ```bash
+  make DESTDIR=/path/to/target uninstall
   ```
 
 Thanks to [LINUXHUNTERREDHAT](https://github.com/LINUXHUNTERREDHAT) for providing the Makefile.

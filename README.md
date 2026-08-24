@@ -36,3 +36,5 @@ If you are bootstrapping a new system, or deploying to a mounted filesystem (e.g
   make DESTDIR=/path/to/target install
 
   ```
+
+Thanks to [LINUXHUNTERREDHAT](https://github.com/LINUXHUNTERREDHAT) for providing the Makefile.

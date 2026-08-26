@@ -8,7 +8,7 @@ trap 'shutdown' TERM INT USR1 USR2
 
 clear
 
-printf "Starting up \033[1;32mGentoo Linux\033[0m\n"
+printf "Starting up \033[1;32mNoPersonalLife Linux\033[0m\n"
 
 log "Mounting pseudo file systems"
 

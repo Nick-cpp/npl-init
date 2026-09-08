@@ -4,7 +4,7 @@ dmesg -n 1
 
 . /etc/npl-init/lib
 
-trap 'shutdown' TERM INT USR1 USR2
+echo -n "npl-init" > /proc/self/comm
 
 clear
 
@@ -67,6 +67,8 @@ while IFS= read -r line; do
     log "Starting $line"
     npli -s "$line"
 done < /etc/npl-init/sv/DEFAULT
+
+trap 'shutdown' TERM INT USR1 USR2
 
 while true; do
     sleep 10000 & wait $!

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+start () {
+    mdev -d
+    mdev -s
+
+    for i in /sys/bus/*/devices/*/uevent /sys/class/*/*/uevent; do
+        echo add > "$i" 2>/dev/null
+    done
+
+}
+
+stop () {
+    killall mdev
+}

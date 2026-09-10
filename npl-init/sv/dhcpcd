@@ -1,0 +1,9 @@
+#!/bin/sh
+
+start () {
+    dhcpcd -q >> /etc/npl-init/log 2>&1
+}
+
+stop () {
+    killall dhcpcd || pkill dhcpcd
+}

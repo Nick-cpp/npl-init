@@ -1,0 +1,16 @@
+#!/bin/sh
+
+start() {
+    for i in 1 2 3 4 5 6; do
+        (
+            while :; do
+                openvt -w -f -c "$i" -- sh -c "exec getty 38400 tty$i" || sleep 1
+            done
+        ) >> /etc/npl-init/log 2>&1 &
+    done
+}
+
+stop() {
+    killall openvt >> /etc/npl-init/log 2>&1
+    killall getty >> /etc/npl-init/log 2>&1
+}

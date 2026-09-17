@@ -4,8 +4,6 @@ dmesg -n 1
 
 . /etc/npl-init/lib
 
-echo -n "npl-init" > /proc/self/comm
-
 clear
 
 printf "Starting up \033[1;32mNoPersonalLife Linux\033[0m\n"

@@ -6,7 +6,7 @@ dmesg -n 1
 
 clear
 
-printf "Starting up \033[1;32mNoPersonalLife Linux\033[0m\n"
+printf "Starting up \033[1;32mNoPersonalLife GNU/Linux\033[0m\n"
 
 log "Mounting pseudo file systems"
 

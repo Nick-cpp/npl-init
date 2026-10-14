@@ -1,8 +1,8 @@
 # npl-init
 
-A simple and lightweight init system for **NoPersonalLife Linux**. 
+A simple and lightweight init system for **NoPersonalLife GNU/Linux**. 
 
-While specifically designed for NoPersonalLife Linux, **npl-init** can be installed and run on any Linux distribution that uses **BusyBox**.
+While specifically designed for NoPersonalLife GNU/Linux, **npl-init** can be installed and run on any Linux distribution that uses **BusyBox**.
 
 ---
 
